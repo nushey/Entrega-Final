@@ -501,10 +501,10 @@ def agregar_avatar(request):
             Avatar.objects.filter(user=request.user).delete()
             form.save()
             return render(request, "AppCoder/inicio.html")
-    if len(avatares) != 0:
+    if len(avatares) > 0:
         contexto = {"form":form, "url":avatares[0].imagen.url}
     else:
-        contexto = {"form":form}
+        contexto = {"form":form, "url":""}
     return render(request, "AppCoder/avatar_form.html", contexto)
 
 def sobre_mi(request):
