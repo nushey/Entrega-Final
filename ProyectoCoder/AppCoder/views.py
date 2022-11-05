@@ -108,7 +108,7 @@ class EstudianteCreacion(CreateView):
 class EstudianteUpdate(UpdateView):
 
     model = Estudiante
-    success_url = "/AppCoder/estudiante_lista"
+    success_url = "/AppCoder/estudiante"
     fields = ["nombre", "apellido", "email"]
 
     def get_context_data(self, **kwargs):
@@ -126,7 +126,7 @@ class EstudianteUpdate(UpdateView):
 class EstudianteDelete(DeleteView):
 
     model = Estudiante
-    success_url = "/AppCoder/estudiantes"
+    success_url = "/AppCoder/estudiante"
 
     def get_context_data(self, **kwargs):
         avatar = Avatar.objects.filter(user=self.request.user).first()
@@ -465,6 +465,10 @@ def editarPerfil(request):
 
     user = request.user
     avatares = Avatar.objects.filter(user=request.user.id)
+    if len(avatares) != 0:
+        contexto = {"url": avatares[0].imagen.url}
+    else:
+        contexto = {}
     if request.method != "POST":
         form = UserEditForm(initial={"email": user.email})
     else:
@@ -477,9 +481,12 @@ def editarPerfil(request):
             user.last_name = data["last_name"]
             user.set_password(data["password1"])
             user.save()
-            return render(request, "AppCoder/inicio.html")            
+            return render(request, "AppCoder/inicio.html", {"url": contexto})            
+    if len(avatares) != 0:
+        contexto = {"user": user,"form": form,"url": avatares[0].imagen.url}
+    else:
+        contexto = {"user": user,"form": form}
     
-    contexto = {"user": user, "form": form,"url":avatares[0].imagen.url}
     return render(request, "AppCoder/editarPerfil.html", contexto)
 
 #Agregar Avatar
@@ -494,7 +501,10 @@ def agregar_avatar(request):
             Avatar.objects.filter(user=request.user).delete()
             form.save()
             return render(request, "AppCoder/inicio.html")
-    contexto = {"form":form, "url":avatares[0].imagen.url}
+    if len(avatares) != 0:
+        contexto = {"form":form, "url":avatares[0].imagen.url}
+    else:
+        contexto = {"form":form}
     return render(request, "AppCoder/avatar_form.html", contexto)
 
 def sobre_mi(request):
