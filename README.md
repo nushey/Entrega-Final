@@ -1,9 +1,6 @@
-Editor.md
-Open source online Markdown editor.
-
 # Entrega: Proyecto Final - Coderhouse
 ## Estudiante: Nahuel Zeballos
-​
+
 ### Descripcion
 **El proyecto consiste en un blog de estilo plataforma estudiantil, en la que se pueden cargar/eliminar/modificar estudiantes, profesores, cursos y entregables.
 Permite al usuario registrarse y logearse, además de un apartado para modificar su perfil y colocar un avatar.**
