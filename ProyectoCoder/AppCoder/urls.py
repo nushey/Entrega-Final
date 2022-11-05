@@ -19,7 +19,7 @@ from AppCoder import views
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
-    path("inicio/", views.inicio, name="inicio"),
+    path("", views.inicio, name="inicio"),
     # Cursos
     path("cursos/", views.curso, name="Cursos"),
     path("curso_lista/", views.CursoList.as_view(), name="ListaCursos"),

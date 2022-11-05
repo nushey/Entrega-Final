@@ -3,11 +3,10 @@
 {% block Contenido %}
 
 <section>
-    <article class="secciones">
-        <div class="titulo_secciones">
-            <h1>Profesores</h1>
+    <article class="portada">
+        <div>
+            <h2>Cargar Profesor</h2>
         </div>
-        <h3 class="subtitulo_secciones">Profesor:</h3>
         <form method="POST">{% csrf_token %} 
             {{ form.as_p }} <br>
             <input id="editar" type="submit" value="Enviar"/>

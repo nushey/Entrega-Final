@@ -3,16 +3,16 @@
 {% block Contenido %}
 
 <section>
-    <article class="secciones">
-        <div class="titulo_secciones">
-            <h1>Profesores</h1>
+    <article class="portada">
+        <div>
+            <h2>Lista Profesores</h2>
         </div>
-        <h3 class="subtitulo_secciones">Lista de Profesores</h3>
-        <div class="lista_secciones">
+        <div>
+            {% if object_list %}
             <ul>
                 {% for profesor in object_list %} 
                     <li>
-                        <p class="texto_lista" >Profesor: {{ profesor.nombre }}</p>
+                        <p>Profesor: {{ profesor.nombre }}</p>
                         <p> 
                             <a class="ver_editar_borrar" href="{% url "DetalleProfesores" profesor.id %}">Ver</a>
                             <a class="ver_editar_borrar" href="{% url "EditarProfesores" profesor.id %}">Editar</a>
@@ -21,6 +21,9 @@
                     </li>
                 {% endfor %}
             </ul>
+            {% else %}
+            <ul><li><p>No hay estudiantes aún</p></li></ul>
+            {% endif %}
         </div>
         <a class="regresar" href="{% url "Profesores" %}">Regresar</a>
     </article>

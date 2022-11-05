@@ -3,13 +3,12 @@
 {% block Contenido %}
 
 <section>
-    <article class="secciones">
-        <div class="titulo_secciones">
-            <h1>Cursos</h1>
+    <article class="portada">
+        <div>
+            <h2>Eliminar Curso</h2>
         </div>
-        <h3 class="subtitulo_secciones">Borrar Curso</h3>
         <form method="post">{% csrf_token %}
-            <p class="texto_lista">¿Estas seguro que deseas borrar el curso "{{ object }}"?</p><br>
+            <p>¿Estas seguro que deseas borrar el curso "{{ object }}"?</p><br>
          <input id="editar" type="submit" value="Borrar"/>
          <a class="regresar" href="{% url "ListaCursos" %}">Cancelar</a>
         </form>

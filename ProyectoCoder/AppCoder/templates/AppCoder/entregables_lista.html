@@ -3,16 +3,15 @@
 {% block Contenido %}
 
 <section>
-    <article class="secciones">
-        <div class="titulo_secciones">
-            <h1>Entregables</h1>
+    <article class="portada">
+        <div>
+            <h2>Lista Entregables</h2>
         </div>
-        <h3 class="subtitulo_secciones">Lista de Entregables</h3>
-        <div class="lista_secciones">
+        <div>
             <ul>
                 {% for entregable in object_list %} 
                     <li>
-                        <p class="texto_lista" >Entregable: {{ entregable.nombre }}</p>
+                        <p>Entregable: {{ entregable.nombre }}</p>
                         <p> 
                             <a class="ver_editar_borrar" href="{% url "DetalleEntregables" entregable.id %}">Ver</a>
                             <a class="ver_editar_borrar" href="{% url "EditarEntregables" entregable.id %}">Editar</a>

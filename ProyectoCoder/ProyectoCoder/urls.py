@@ -20,8 +20,9 @@ from django.conf import settings
 
 
 urlpatterns = [
-     path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls),
     path("AppCoder/", include("AppCoder.urls")),
+    path("Messages/", include("Messages.urls")),
 ]
 
 
