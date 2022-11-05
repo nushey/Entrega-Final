@@ -4,7 +4,7 @@
 ### Descripcion
 **El proyecto consiste en un blog de estilo plataforma estudiantil, en la que se pueden cargar/eliminar/modificar estudiantes, profesores, cursos y entregables.
 Permite al usuario registrarse y logearse, además de un apartado para modificar su perfil y colocar un avatar.**
-**Con respecto a la realización del proyecto, cómo decidi trabajar por mi cuenta, me encargue yo mismo de todas las funcionalidades, maquetado y css del blog**
+**Con respecto a la realización del proyecto, cómo decidi trabajar por mi cuenta, me encargue yo mismo de todas las funcionalidades, maquetado y css del blog**.
 **URL Home**:
 - http://127.0.0.1:8000/AppCoder/
 ​
