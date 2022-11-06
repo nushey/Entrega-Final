@@ -8,6 +8,7 @@
             <h2>Lista Cursos</h2>
         </div>
         <div>
+            {% if object_list %}
             <ul>
                 {% for curso in object_list %} 
                     <li>
@@ -20,6 +21,9 @@
                     </li>
                 {% endfor %}
             </ul>
+            {% else %}
+            <ul><li><p>No hay cursos aún</p></li></ul>
+            {% endif %}
         </div>
         <a class="regresar" href="{% url "Cursos" %}">Regresar</a>
     </article>

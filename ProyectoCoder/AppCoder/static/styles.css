@@ -5,103 +5,158 @@
   padding: 0;
 }
 
-body,html {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-}
-
-.contain {
-  height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgb(29, 32, 43,0.75),rgb(0, 0, 0,0.75)), url(img/header.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.navbar{
-  height: 10vh;
-  display: flex;
-  background-color: white;
-  justify-content: space-between;
-  align-items: center;
-}
-.navbar ul li{
-  list-style: none;
-}
-.navbar .directorios {
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-  margin: 5px;
-  padding: 0px 40px;
-}
-.navbar .directorios li{
-  display: inline-block;
-}
-.navbar .directorios li a{
-  text-decoration: none;
-  color: #1D202B;
-  font-size: 20px;
-  font-weight: bold;
-}
-.navbar .directorios li a:hover{
-  color: #f02210;
-  transition: 0.4s ease-out;
-}
-.navbar .perfil {
-  background-image: linear-gradient(rgb(29, 32, 43,0.75),rgb(0, 0, 0,0.75));
-  width: 20%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.navbar .perfil li, .navbar .perfil a{
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: bold;
-  transition: .5s;
-}
-.navbar .perfil a:hover{
-  color: #002364;
-  transition: 0.4s ease-out;
-  
-}
-
-.img{
-  width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.img img{
-  width: 120px;
-  height: auto;
-  margin-right: 10px;
-}
-
-img {
-  width: 50px;
-  height: auto;
-}
-.contain_titulo{
+header{
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: 90vh;
   align-items: center;
   justify-content: center;
 }
-.contain_titulo h1{
+header h1{
   font-size: 100px;
   color: #ffffff;
   text-shadow: 3px 1px rgb(117, 233, 29);
 }
-.contain_titulo h2{
+header h2{
   font-size: 75px;
   color: #ffffff;
+} 
+
+
+
+/*-------------*/
+nav{
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+ 
 }
+nav a{
+  color: black;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+nav ul {
+  list-style: none;
+  
+}
+
+.logo{
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;  
+}
+.perfil {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.links{
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;  
+}
+.links a{
+  font-size: 20px;
+}
+.logo h2{
+  font-size: 40px;
+}
+.logo span{
+  color: red;
+}
+header{
+  height: 90vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(32, 27, 27, 0.75), rgba(23, 19, 38, 0.75)), url(https://i0.wp.com/eltiempolatino.com/wp-content/uploads/2022/08/Estudiantes-universitarios-alquileres-de-vivienda.jpg?fit=1280%2C853&ssl=1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30%;
+}   
+
+.barra {
+  position: absolute;
+  background: rgb(46, 44, 63);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+.barra li a{
+  display: block;
+  padding: 15px 15px;
+  color: white;
+}
+.perfil li:hover .barra{
+  visibility: visible;
+  opacity: 1;
+}
+.perfil > li{
+  font-size: 25px;
+}
+.perfil img{
+  width: 50px;
+  height: auto;
+  border-radius: 30px;
+}
+.barra > li{
+  font-size: 20px;
+}
+.links > li a:hover{
+ color: rgb(51, 51, 177);
+ border-bottom: 1px solid black;
+ transition: all .3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

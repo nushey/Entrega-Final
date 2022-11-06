@@ -41,7 +41,7 @@ def inicio(request):
         contexto = {"url":avatares[0].imagen.url}
     else:
         contexto = {}
-    return render(request, "AppCoder/nav.html", contexto)
+    return render(request, "AppCoder/inicio.html", contexto)
 
 
 # Estudiantes

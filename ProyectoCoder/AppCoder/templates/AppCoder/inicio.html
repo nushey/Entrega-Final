@@ -4,62 +4,56 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static "styles.css" %}">
-    <title>Plataforma</title>
+    <title>Pagina</title>
 </head>
 <body>
-    <div class="contain">
-        <div class="navbar">
-            <div class="img">
-                <img src="{% static "img/nav.png" %}" alt="logo">
-                <h2>Plataforma 1.0</h2>
-            </div>
-            <ul class="directorios">
-            {% if user.is_authenticated %}
-                <li><a href="{% url "inicio" %}">Inicio</a></li>
-                <li><a href="{% url "Estudiantes" %}">Estudiantes</a></li>
-                <li><a href="{% url "Profesores" %}">Profesores</a></li>
-                <li><a href="{% url "Cursos" %}">Cursos</a></li>
-                <li><a href="{% url "Entregables" %}">Entregable</a></li>
-                <li><a href="{% url "Sobre_Mi" %}">Sobre Mi</a></li>
-                <li><a href="{% url "Logout" %}">Deslogearse</a></li>
-            </ul>
-
-            <ul class="perfil">
-                {% if url %}
-                    <li><img src="{{url}}"></li>
-                {% endif %} 
-                <li>{{user.username}}</li> 
-                <li><a href="{% url "EditarPerfil" %}">Editar Perfil</a></li>
-                {% if url %}
-                    <li><a href="{% url "AgregarAvatar" %}">Cambiar Avatar</a></li>
-                {% else %}
-                    <li> <a href="{% url "AgregarAvatar" %}">Agregar Avatar</a></li>
-                {% endif %} 
-            {% endif %}
-            </ul>  
-            {% if not user.is_authenticated %}
-            <ul class="perfil">
-                <li><a style="font-size:30px" href="{% url "Login" %}">Login</a></li>
-                <li><a style="font-size:30px" href="{% url "Register" %}">Register</a></li>
-            </ul>  
-            {% endif %}
-              
-                           
-            
-            
-            
-          
-      
-            
+    <nav>
+        <div class="logo">
+            <h2>Plata<span>forma</span> </h2>
         </div>
+        <ul class="links">
+        {% if user.is_authenticated %}
+            <li><a href="{% url "inicio" %}">Inicio</a></li>
+            <li><a href="{% url "Estudiantes" %}">Estudiantes</a></li>
+            <li><a href="{% url "Profesores" %}">Profesores</a></li>
+            <li><a href="{% url "Cursos" %}">Cursos</a></li>
+            <li><a href="{% url "Entregables" %}">Entregables</a></li>
+            <li><a href="{% url "Sobre_Mi" %}">Sobre Mi</a></li>
+        </ul>
+        <ul class="perfil">
+            {% if url %}
+            <img src="{{url}}" alt="avatar">
+            {% endif %}
+            <li class="user"><a href="">{{user.username}}</a>
+                <ul class="barra">
+                    <li><a href="{% url "EditarPerfil" %}">Editar Perfil</a></li>
+                    {% if url %}
+                    <li><a href="{% url "AgregarAvatar" %}">Editar Avatar</a></li>
+                    {% else %}
+                    <li><a href="{% url "AgregarAvatar" %}">Agregar Avatar</a></li>
+                    {% endif %} 
+                    <li><a href="{% url "Logout" %}">Logout</a></li>
+                </ul>
+            </li>
+        {% endif %}
+        </ul>
+    {% if not user.is_authenticated %}
+        <ul class="perfil">
+            <li><a href="{% url "Login" %}">Login</a></li>
+            <li><a href="{% url "Register" %}">Register</a></li>
+        </ul>
+    {% endif %}
+    </nav>
         {% block Contenido %}
-        <div class="contain_titulo">
+        <header>
             <h1>PLATAFORMA ESTUDIANTIL</h1>
             <h2>{{mensaje}}</h2>
-        </div>
-    </div>
+        </header>
 </body>
 </html>
 

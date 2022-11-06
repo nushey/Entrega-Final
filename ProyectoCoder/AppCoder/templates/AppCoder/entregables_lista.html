@@ -8,6 +8,7 @@
             <h2>Lista Entregables</h2>
         </div>
         <div>
+        {% if object_list %}
             <ul>
                 {% for entregable in object_list %} 
                     <li>
@@ -20,6 +21,9 @@
                     </li>
                 {% endfor %}
             </ul>
+        {% else %}
+        <ul><li><p>No hay entregables aún</p></li></ul>
+        {% endif %}
         </div>
         <a class="regresar" href="{% url "Entregables" %}">Regresar</a>
     </article>
